@@ -1,1 +1,13 @@
-/* You can add global styles to this file, and also import other style files */
+/* Global styles — these apply to every component in the app */
+
+/* Remove default margin/padding that browsers add */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Make the app fill the full browser height */
+html, body {
+  height: 100%;
+}

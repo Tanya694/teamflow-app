@@ -1,0 +1,24 @@
+<div class="app-shell">
+  <aside class="sidebar">
+    <div class="sidebar-brand">
+      <span class="brand-name">Teamflow</span>
+    </div>
+    <nav class="sidebar-nav">
+      <a routerLink="/dashboard" routerLinkActive="active" class="nav-link"
+        >Dashboard</a
+      >
+      <a routerLink="/teams" routerLinkActive="active" class="nav-link"
+        >Teams</a
+      >
+    </nav>
+  </aside>
+  <div class="main-area">
+    <header class="topbar">
+      <span class="topbar-title">TeamFlow</span>
+      <span class="topbar-user">Logged in user</span>
+    </header>
+    <main class="page-content">
+      <router-outlet />
+    </main>
+  </div>
+</div>

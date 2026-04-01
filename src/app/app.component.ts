@@ -9,5 +9,6 @@ import { RouterOutlet } from '@angular/router';
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  title = 'teamflow-app';
+  // The root component — it acts as the shell for the entire app.
+  // As we add routes, RouterOutlet (in the HTML) will swap content here.
 }
