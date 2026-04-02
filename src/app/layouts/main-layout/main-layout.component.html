@@ -10,12 +10,25 @@
       <a routerLink="/teams" routerLinkActive="active" class="nav-link"
         >Teams</a
       >
+      <a routerLink="/tasks" routerLinkActive="active" class="nav-link"
+        >Tasks</a
+      >
     </nav>
   </aside>
   <div class="main-area">
     <header class="topbar">
       <span class="topbar-title">TeamFlow</span>
-      <span class="topbar-user">Logged in user</span>
+
+      <!-- (user$ | async) subscribes to the user$ Observable and gives us the current value -->
+      <!-- *ngIf shows this block only when user data is available -->
+      <div class="topbar-user" *ngIf="user$ | async as user">
+        <!-- user.picture is the avatar URL from Auth0 -->
+        <img [src]="user.picture" [alt]="user.name" class="user-avatar" />
+        <!-- user.name is the display name from Auth0 -->
+        <span>{{ user.name }}</span>
+        <!-- (click)="logout()" calls our logout method -->
+        <button (click)="logout()" class="logout-btn">Logout</button>
+      </div>
     </header>
     <main class="page-content">
       <router-outlet />
