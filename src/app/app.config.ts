@@ -1,5 +1,6 @@
 import { ApplicationConfig, provideZoneChangeDetection } from '@angular/core';
 import { provideRouter } from '@angular/router';
+import { provideHttpClient } from '@angular/common/http'; // ← enables HTTP calls
 import { provideAuth0 } from '@auth0/auth0-angular';   // ← Auth0's Angular provider
 import { environment } from '../environments/environment';  // ← our config values
 
@@ -9,6 +10,7 @@ export const appConfig: ApplicationConfig = {
   providers: [
     provideZoneChangeDetection({ eventCoalescing: true }),
     provideRouter(routes),
+    provideHttpClient(), // ← makes HttpClient available for injection anywhere in the app
 
     // Register Auth0 with our app — reads domain and clientId from environment.ts
     // This makes the AuthService available for injection anywhere in the app
